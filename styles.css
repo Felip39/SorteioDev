@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('./assets/backgrondcassinojpg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Evita que o container encoste nas bordas em telas pequenas */
+}
+
+.main-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* RESPONSIVIDADE PRINCIPAL */
+    width: 100%;
+    max-width: 450px; /* Tamanho ideal para notebooks e desktops */
+}
+
+.dado {
+    width: 80px; /* Reduzi um pouco para telas menores */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Grupo de Inputs - Flexível */
+.input-group {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Faz os inputs quebrarem linha se não couberem */
+}
+
+input {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    width: 130px; /* Tamanho base */
+    text-align: center; /* Centraliza o número digitado */
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #da0707;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(218, 7, 7, 0.3);
+    font-weight: 700;
+    margin-top: 20px;
+    width: 100%; /* Botão ocupa a largura da caixa em telas pequenas */
+    max-width: 200px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #ff0000;
+}
+
+/* Para celulares pequenos (até 400px de largura) */
+@media (max-width: 400px) {
+    .main-container {
+        padding: 25px 15px;
+    }
+
+    h1 { font-size: 2rem; }
+    
+    input {
+        width: 100%; /* Inputs ocupam a linha toda em celulares muito pequenos */
+    }
+
+    .input-group {
+        flex-direction: column; /* Um input em cima do outro */
+        align-items: center;
+    }
+}
+
+/* Para telas muito grandes (Desktops) */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 500px; /* Aumenta um pouco a caixa em telas enormes */
+    }
+}
+
+/* Removendo setas do input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
